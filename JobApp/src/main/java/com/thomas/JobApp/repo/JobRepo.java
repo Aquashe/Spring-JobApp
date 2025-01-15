@@ -1,14 +1,16 @@
 package com.thomas.JobApp.repo;
 
 import com.thomas.JobApp.model.JobPost;
+import jakarta.persistence.Entity;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class JobRepo {
-
+public interface JobRepo  extends JpaRepository<JobPost,Integer> {
+    /*
     List<JobPost> jobs = new ArrayList<JobPost>();
     public JobRepo() {
         jobs.add(new JobPost(1, "Java Developer", "Must have good experience in core Java and advanced Java", 2,
@@ -47,5 +49,9 @@ public class JobRepo {
         jobs.add(job);
         System.out.println(jobs);
     }
+    */
+
+    List<JobPost> findByPostProfileContainingOrPostDescContaining(String postProfile , String postDesc);
+
 
 }

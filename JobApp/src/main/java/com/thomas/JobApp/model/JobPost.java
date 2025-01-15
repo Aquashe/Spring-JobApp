@@ -3,15 +3,19 @@ package com.thomas.JobApp.model;
 
 import java.util.List;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
 
 
 @Component
+@Entity
 public class JobPost {
 
 
+    @Id
     private int postId ;
     private String postProfile;
     private String postDesc;
