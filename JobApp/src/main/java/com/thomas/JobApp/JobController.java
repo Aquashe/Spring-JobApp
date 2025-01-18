@@ -69,6 +69,7 @@ public class JobController {
 
     @GetMapping("jobPost/{postId}")
     public JobPost getJob(@PathVariable("postId") int postId){
+//        int num =10/0;
         return  service.getJob(postId);
     }
 
